@@ -1,0 +1,30 @@
+body{
+  background-color: #BCC8DC;
+}
+
+.contenedor{
+   width: 90;
+  display: flex;
+  
+}
+
+
+.menu{
+  background-color: #BCC8DC;
+  width: 30%;
+  height: auto;
+  margin-right: 3px;
+
+}
+
+.empresa{
+  background-color: #BCC8DC;
+  width: 70%;
+  height: auto;
+  margin-right: 3px;
+}
+
+.lista ul{
+  list-style: none;
+}
+
