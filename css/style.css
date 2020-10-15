@@ -1,13 +1,13 @@
 body{
-  background-color: rgb(254, 244, 255);
+  background-color: #BCC8DC;
 }
 
 header{
-  background-color: chartreuse;
+  background-color: #384257;
 }
 
 .logo{
-  background-color: blue;
+  background-color:  #384257;
   width: 20%;
   height: 7em;
   background-size: cover;
@@ -21,57 +21,98 @@ header{
   
 }
 .carrusel{
-  background-color: tomato;
+  background-color:  #BCC8DC;
+
 }
 
 .carousel{
   padding-top: 2em;
   padding-left: 5em;
   padding-right: 5em;
-  padding-bottom: 4em;
+  padding-bottom: 2em;
 }
 
 .principal{
   width: 100;
   display: flex;
- 
-  
+  margin-right: 1px;
+  margin-left: 1px;
+}
+
+.novedades {
+  border: 1px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 1em;
+  background-color: #004ba0;
+}
+.novedades h2, p{
+ color: #d9d9d9;
+}
+.novedades .col-lg-3{
+  padding: 8px;
+  margin: 0;
+}
+.novedades img{
+  width: 100%;
+  height: 210px;
+}
+.novedades button{
   
 }
 
+.novedades img:hover{
+  border: 5px solid #004ba0;
+}
+.row{
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .contempresa{
-  background-color: red;
-  width: 55%;
+  background-color: #BCC8DC;
+  width: 60%;
   height: auto;
+  margin-right: 3px;
   
  
 }
 
 .instagram{
-  background-color: blue;
-  width: 45%;
-  height: 200px;
-  
-  
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #004ba0;
+  width: 40%;
+  height: 901px;
+  margin-right: 2px; 
+}
+
+.somos{
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #004ba0;
 }
 
 .somos p{
   text-align: justify;
   padding-right: 1em;
   padding-left: 1em;
+  color: #d9d9d9;
 }
 .somos h2{
   padding-left: 12px;
+  color: #d9d9d9;
 }
 
 footer{
+  margin-top: 9px;
   
   width: 100%;
   
 }
 
 .main-contenido{
-  background: #111;
+  background:#16191f; 
   color: #d9d9d9;
   display: flex;
   justify-content: space-between;
@@ -82,6 +123,7 @@ footer{
 
 .copy{
   width: 100%;
+  
 }
 
 
@@ -131,9 +173,10 @@ footer{
 
 .autor{
   text-align: center;
-  background: #242424;
+  background:#16191f;
   padding-top: 10px;
   font-style: italic;
+  height: 50px;
   
 }
 
