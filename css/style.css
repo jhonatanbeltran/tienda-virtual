@@ -42,7 +42,7 @@ header{
 .contempresa{
   background-color: red;
   width: 55%;
-  height: 200px;
+  height: auto;
   
  
 }
@@ -53,6 +53,15 @@ header{
   height: 200px;
   
   
+}
+
+.somos p{
+  text-align: justify;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+.somos h2{
+  padding-left: 12px;
 }
 
 footer{
