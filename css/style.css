@@ -40,11 +40,13 @@ header{
 }
 
 .novedades {
-  border: 1px solid black;
   border-radius: 5px;
   overflow: hidden;
   margin-top: 1em;
   background-color: #004ba0;
+  -webkit-box-shadow: 7px 6px 10px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 7px 6px 10px -6px rgba(0,0,0,0.75);
+box-shadow: 7px 6px 10px -6px rgba(0,0,0,0.75);
 }
 .novedades h2, p{
  color: #d9d9d9;
@@ -79,18 +81,23 @@ header{
 }
 
 .instagram{
-  border: 1px solid black;
   border-radius: 5px;
   background-color: #004ba0;
   width: 40%;
   height: 901px;
   margin-right: 2px; 
+  -webkit-box-shadow: 7px 6px 10px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 7px 6px 10px -6px rgba(0,0,0,0.75);
+box-shadow: 7px 6px 10px -6px rgba(0,0,0,0.75);
 }
 
 .somos{
-  border: 1px solid black;
+  
   border-radius: 5px;
   background-color: #004ba0;
+  -webkit-box-shadow: 7px 6px 10px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 7px 6px 10px -6px rgba(0,0,0,0.75);
+box-shadow: 7px 6px 10px -6px rgba(0,0,0,0.75);
 }
 
 .somos p{

@@ -1,30 +1,54 @@
 body{
   background-color: #BCC8DC;
+  
 }
 
 .contenedor{
    width: 90;
   display: flex;
+  margin-left: 1em;
+  margin-right: 1em;
   
 }
 
-
-.menu{
-  background-color: #BCC8DC;
-  width: 30%;
-  height: auto;
-  margin-right: 3px;
+#titulo{
 
 }
 
 .empresa{
   background-color: #BCC8DC;
-  width: 70%;
+  width: 80%;
   height: auto;
   margin-right: 3px;
 }
 
+.menu{
+  background-color: #BCC8DC;
+  width: 20%;
+  height: auto;
+  margin-right: 3px;
+
+}
+
+
+.menu h2{
+  text-align: left;
+}
+
+.lista{
+  border: 1px solid black;
+
+}
 .lista ul{
   list-style: none;
 }
 
+.formulario{
+  padding-left: 11em;
+  padding-right: 12em;
+  margin-top: 2em;
+}
+
+#boton{
+  padding-left: 18em;
+}
