@@ -1,11 +1,4 @@
-//$(document).ready(function () {
-  //var max_caracteres =913;
-  //$("#max").html(max_caracteres);
-   //$('#comment').keyup(function() {
-     //   var caracteres = $(this).val().length;
-       // var diff = max_caracteres - caracteres;
-        //$('#contador').html(diff); 
-//});
+
 contenido_textarea = "";
 num_caracteres_permitidos = 913;
 function valida_longitud() {
