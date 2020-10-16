@@ -1,16 +1,29 @@
-function getID(id){
-  return getElementById(id).value;
+//$(document).ready(function () {
+  //var max_caracteres =913;
+  //$("#max").html(max_caracteres);
+   //$('#comment').keyup(function() {
+     //   var caracteres = $(this).val().length;
+       // var diff = max_caracteres - caracteres;
+        //$('#contador').html(diff); 
+//});
+contenido_textarea = "";
+num_caracteres_permitidos = 913;
+function valida_longitud() {
+  num_caracteres = document.forms[0].texto.value.length;
+  if (num_caracteres > num_caracteres_permitidos) {
+    document.forms[0].texto.value = contenido_textarea;
+  } else {
+    contenido_textarea = document.forms[0].texto.value;
+  }
+
+  if (num_caracteres >= num_caracteres_permitidos) {
+    document.forms[0].caracteres.style.color = "#ff0000";
+  } else {
+    document.forms[0].caracteres.style.color = "#000000";
+  }
+  cuenta();
 }
 
-function innerHTML(id,result) {
-  return getElementById(id).innerHTML=result;
-}
-
-function contadorCaracteres(){
-  setInterval(function(){
-      var c= getID("quienessomos");
-      if (c.length >913) {
-        innerHTML("")
-      }
-  },0000);
+function cuenta() {
+  document.forms[0].caracteres.value = document.forms[0].texto.value.length;
 }
