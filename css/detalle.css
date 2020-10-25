@@ -1,0 +1,55 @@
+
+body{
+  background-color: #dce2ec;
+  
+}
+
+.principal{
+   padding:12em;
+    padding-top: 2em;
+    display: flex;
+   flex-flow: column;
+   
+}
+
+img{
+  width: auto;
+  height: auto;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+
+.detal{
+  display: flex;
+  
+}
+
+.conten{
+  display: flex;
+   flex-flow: column;
+   padding-left: 2em;
+   padding-top: 3em;
+}
+
+.conten * + *{
+   margin-top: 0.5em;
+ }
+
+
+.nombre{
+  font-size: 1.5em;
+}
+
+.precio{
+   font-size: 1.3em;
+ }
+
+ .precio-envio{
+   color: rgb(0, 166, 80);
+ }
+
+
+ .texto p{
+   color: rosybrown;
+ }

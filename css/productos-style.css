@@ -27,6 +27,11 @@ body{
 
  }
 
+ img{
+   width: 248px;
+   height: 248px;
+ }
+
  .producto > img{
    width: 100%;
    object-fit: cover;
@@ -74,9 +79,24 @@ body{
    transition-property: opacity;
    opacity: 0;
  }
+ .btn{
+   transition-duration: 0.3s;
+   transition-property: opacity;
+   opacity: 0;
+
+ }
 
  .producto:hover .calificacion{
    opacity: 1;
+ }
+
+ .producto:hover .btn{
+   opacity: 1;
+ }
+
+ .btn a{
+   color: rgb(255, 255, 255);
+   text-decoration: none;
  }
 
  
