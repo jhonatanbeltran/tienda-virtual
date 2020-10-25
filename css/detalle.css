@@ -5,10 +5,18 @@ body{
 }
 
 .principal{
-   padding:12em;
+  width: 900px;
+  height: 500px;
+   padding:1em;
     padding-top: 2em;
     display: flex;
    flex-flow: column;
+   background-color: white;
+   margin-top: 1em;
+   margin-left: 14em;
+   margin-bottom: 3em;
+   border-radius: 5px;
+   
    
 }
 
@@ -30,6 +38,7 @@ img{
    flex-flow: column;
    padding-left: 2em;
    padding-top: 3em;
+   overflow: hidden;
 }
 
 .conten * + *{
