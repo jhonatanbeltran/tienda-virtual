@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 class marca(models.Model):
     nombre=models.CharField(max_length=100)
     descripcion=models.TextField(max_length=500)
@@ -17,7 +17,7 @@ class categoria(models.Model):
         return self.nombre
 class empresa(models.Model):
     referencia=models.CharField(max_length=20)
-    quienesSomos=models.TextField(max_length=500)
+    quienesSomos=RichTextField(verbose_name='quienesSomos')
     email=models.EmailField()
     direccion=models.CharField(max_length=200)
     telefono=models.CharField(max_length=20)

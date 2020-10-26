@@ -17,7 +17,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="{% static '/assets/logo/flooop.png' %}" alt="Logo" />
+            <a href="{% url 'home' %}"> <img src="{% static '/assets/logo/flooop.png' %}" alt="Logo" /></a>
         </div>
     </header>
 
@@ -28,20 +28,18 @@
     <div class="principal ">
         <div class="detal">
             <div class="fototo">
-                <img src="{% static '/assets/novedades/air-jordan-1-low.jpg' %}" alt="jordan morados">
+                <img src="{{ pro.img.url }}" alt="{ pro.nombre }">
             </div>
             <div class="conten">
-                <span class="nombre">nike jordan morados</span>
-                <span class="precio">$50.000</span>
+                <span class="nombre">{{ pro.nombre}}</span>
+                <span class="precio">${{pro.valor}}</span>
                 <span class="precio-envio">envío gratis</span>
-                <span class="descrip">Descipcion corta del producto</span>
+                <span class="descrip">{{pro.descripcionCorta}}</span>
             </div>
         </div>
 
         <div class="texto">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut voluptas corrupti debitis atque architecto quis dolores delectus molestias consectetur, alias sit eligendi, itaque earum iste, rem deleniti ipsum hic nemo! <br> <br> Lorem ipsum
-                dolor sit amet consectetur adipisicing elit. Molestias eum consequuntur suscipit. Fuga facere voluptates rem quam. Incidunt, blanditiis assumenda? Maxime, at velit quidem ad ipsam beatae vitae corporis magnam! Lorem, ipsum dolor sit amet
-                consectetur adipisicing elit. Quidem deserunt dolor illo repellat consequatur modi quis dolore ducimus sed asperiores consectetur necessitatibus animi, quia molestiae. Culpa quae doloribus id quos!</p>
+            <p>{{pro.detalle}}</p>
         </div>
     </div>
 
@@ -53,10 +51,10 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis qui, aperiam dignissimos necessitatibus distinctio deleniti quaerat commodi facere in perspiciatis ea veniam aliquam recusandae, earum sapiente consectetur doloremque
                         accusamus? Eius!</p>
                     <div class="social">
-                        <a href="#"><span class="fab fa-facebook-f"></span></a>
-                        <a href="#"><span class="fab fa-twitter"></span></a>
-                        <a href="#"><span class="fab fa-instagram"></span></a>
-                        <a href="#"><span class="fab fa-youtube"></span></a>
+                        <a href="{{  empresa.facebook }}" target="_blank"><span class="fab fa-facebook-f"></span></a>
+                        <a href="{{ empresa.twitter }}" target="_blank"><span class="fab fa-twitter"></span></a>
+                        <a href="{{ empresa.instagram }}" target="_blank"><span class="fab fa-instagram"></span></a>
+
                     </div>
                 </div>
             </div>
@@ -66,15 +64,15 @@
                 <div class="contenido">
                     <div class="lugar">
                         <span class="fas fa-map-marker-alt"></span>
-                        <span class="text">Cúcuta, Norte de Santander</span>
+                        <span class="text">{{empresa.direccion}}</span>
                     </div>
                     <div class="telefono">
                         <span class="fas fa-phone-alt"></span>
-                        <span class="text">+57-3508597857</span>
+                        <span class="text">{{empresa.telefono}}</span>
                     </div>
                     <div class="email">
                         <span class="fas fa-envelope"></span>
-                        <span class="text">chapa@gmail.com</span>
+                        <span class="text">{{empresa.email}}</span>
                     </div>
                 </div>
             </div>
@@ -91,7 +89,7 @@
                             <div class="text">Mensaje *</div>
                             <textarea cols="28" rows="2" required></textarea>
                         </div>
-                        <div class="btn">
+                        <div class="btn btn-primary">
                             <button type="submit">Enviar</button>
                         </div>
                     </form>
@@ -101,11 +99,10 @@
 
         </div>
         <div class="autor">
-            <p>Todos los derechos son reservados por &copy;Jhonatan Beltran</p>
+            <p>Todos los derechos son reservados por &copy;Eduard Cantillo & Jhonatan Beltran</p>
 
         </div>
     </footer>
-
 
     <script src="../js/empresa.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

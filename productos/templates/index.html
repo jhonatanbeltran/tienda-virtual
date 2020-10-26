@@ -5,8 +5,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
 
@@ -49,11 +48,7 @@
         <div class="contempresa">
             <div class="somos">
                 <h2>Quienes Somos</h2>
-                <p>Lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi similique officiis omnis qui aliquid ipsa libero, perferendis consequuntur enim ipsum ab cum dolorem earum. Reiciendis praesentium dolorem autem ratione excepturi.
-                    dolor sit amet consectetur adipisicing elit. Soluta officia porro tenetur corporis quo illum. Ipsa iure distinctio eum cum sunt quibusdam voluptate ratione reiciendis. Vel odio, perspiciatis in expedita, quibusdam consequuntur provident
-                    voluptas quos rerum mollitia autem fugit cumque alias deleniti maiores delectus fuga magni ipsum eligendi similique. Iste, quisquam aut sapiente facere ullam alias repellat error aperiam incidunt? Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Consectetur, delectus libero placeat reprehenderit perspiciatis rem autem fuga alias tempora animi, ipsum voluptate. Totam aspernatur saepe perferendis ut? Expedita, blanditiis dicta?
-                </p>
+                <p>{{ empresa.quienesSomos }}</p>
 
             </div>
 
@@ -66,13 +61,13 @@
                 <div class="row">
                     {% for x in produc %}
                     <div class="col-lg-3">
-                        <img src="{{ x.img.url}}" alt={x.nombre}>
+                        <a href="{% url 'detalle' x.id %}"><img src="{{ x.img.url}}" alt={x.nombre}></a>
                     </div>
 
                     {% endfor %}
                 </div>
                 <div class="text-center pt-1">
-                    <a type="button" class="btn btn-primary">Ver todos los productos</a>
+                    <a href="{% url 'productos' %}" class="btn btn-primary">Ver todos los productos</a>
                 </div>
                 {% else %}
                 <div class="text-center pt-1">
@@ -83,14 +78,13 @@
             </div>
         </div>
 
-        <div class="instagram ">
-
+        <!--   <div class="instagram">
             <script src="https://apps.elfsight.com/p/platform.js"></script>
             <div class="elfsight-app-b93e63d9-933f-4927-bbfe-629001eedc9e"></div>
+        </div>-->
 
-            <button type="button" class="btn btn-primary">Siguenos</button>
-
-        </div>
+        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+        <div class="elfsight-app-bca9d146-e5ce-42ff-8245-a93f0e00ab09"></div>
     </div>
 
     <footer style="flex-direction: row;">
@@ -101,10 +95,10 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis qui, aperiam dignissimos necessitatibus distinctio deleniti quaerat commodi facere in perspiciatis ea veniam aliquam recusandae, earum sapiente consectetur doloremque
                         accusamus? Eius!</p>
                     <div class="social">
-                        <a href="#"><span class="fab fa-facebook-f"></span></a>
-                        <a href="#"><span class="fab fa-twitter"></span></a>
-                        <a href="#"><span class="fab fa-instagram"></span></a>
-                        <a href="#"><span class="fab fa-youtube"></span></a>
+                        <a href="{{  empresa.facebook }}" target="_blank"><span class="fab fa-facebook-f"></span></a>
+                        <a href="{{ empresa.twitter }}" target="_blank"><span class="fab fa-twitter"></span></a>
+                        <a href="{{ empresa.instagram }}" target="_blank"><span class="fab fa-instagram"></span></a>
+
                     </div>
                 </div>
             </div>
@@ -114,15 +108,15 @@
                 <div class="contenido">
                     <div class="lugar">
                         <span class="fas fa-map-marker-alt"></span>
-                        <span class="text">Cúcuta, Norte de Santander</span>
+                        <span class="text">{{empresa.direccion}}</span>
                     </div>
                     <div class="telefono">
                         <span class="fas fa-phone-alt"></span>
-                        <span class="text">+57-3508597857</span>
+                        <span class="text">{{empresa.telefono}}</span>
                     </div>
                     <div class="email">
                         <span class="fas fa-envelope"></span>
-                        <span class="text">chapa@gmail.com</span>
+                        <span class="text">{{empresa.email}}</span>
                     </div>
                 </div>
             </div>
@@ -130,14 +124,15 @@
             <div class="caja derecha">
                 <h2>Contactanos</h2>
                 <div class="contenido">
-                    <form action="#">
+                    <form action="{% url 'contacto' %}" method="POST">
+                        {% csrf_token %}
                         <div class="email">
                             <div class="text">Email *</div>
-                            <input type="email" required>
+                            <input type="email" name='email' required>
                         </div>
                         <div class="msg">
                             <div class="text">Mensaje *</div>
-                            <textarea cols="28" rows="2" required></textarea>
+                            <textarea cols="28" rows="2" name='asunto' required></textarea>
                         </div>
                         <div class="btn">
                             <button type="submit">Enviar</button>
@@ -149,17 +144,17 @@
 
         </div>
         <div class="autor">
-            <p>Todos los derechos son reservados por &copy;Jhonatan Beltran</p>
+            <p>Todos los derechos son reservados por &copy;Eduard Cantillo & Jhonatan Beltran</p>
 
         </div>
     </footer>
 
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

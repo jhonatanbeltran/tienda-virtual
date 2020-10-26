@@ -15,26 +15,79 @@
 </head>
 
 <body>
+    -->
     <header>
         <div class="logo">
-            <img src="{% static '/assets/logo/flooop.png' %}" alt="Logo" />
+            <a href="{% url 'home' %}"> <img src="{% static '/assets/logo/flooop.png' %}" alt="Logo" /></a>
         </div>
     </header>
 
-    <div class="text-center pt-1">
+    <!--<div class="text-center pt-1">
         <h2>Listado de productos</h2>
+    </div>-->
+
+    <div class="t">
+        <button type="button" class="" data-toggle="modal" data-target="#miModal">Categorias & Marcas</button> {% if filtro %}
+        <h2 class="titi">Listado de productos {{filtro}}</h2>
+        {% else %}
+        <h2 class="titi">Listado de productos</h2>
+        {% endif %}
     </div>
+
+    <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h6>Filtro por categorias</h6>
+                    <ul>
+                        {% for cat in categoria %}
+                        <li><a href="{% url 'filtroCategoria' cat.id %}">{{cat.nombre}}</a></li>
+                        {% endfor %}
+
+                    </ul>
+                    <h6>Filtro por marcas</h6>
+                    <ul>
+                        {% for mar in marca %}
+                        <li><a href="{% url 'filtroMarca' mar.id %}">{{mar.nombre}} </a></li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="buscador">
+        <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
+            <input class="form-control form-control-sm mr-1 w-75" type="text" placeholder="busqueda de productos" aria-label="Search">
+            <i class="fas fa-search" aria-hidden="true"></i>
+        </form>
+
+    </div>
+
+
+
     <div class="contenedora">
+
+
         {% if produc %} {% for x in produc %}
         <div class="producto">
             <img src="{{ x.img.url}}" alt="{{ x.nombre}}">
             <div class="informacion">
 
-                <span class="tipo-envio">{{x.nombre}}</span>
+                <span class="tipo-envio">Envio Gratuito</span>
+                <span class="descripcion"><strong>{{x.nombre}}</strong></span>
                 <span class="precio">{{x.valor}}</span>
                 <span class="descripcion">{{x.descripcionCorta}}</span>
 
-                <a class="btn btn-info" href="detalles.html">Ver mas</a>
+                <a class="btn btn-info" href="{% url 'detalle' x.id %}">Ver mas</a>
             </div>
         </div>
         {% endfor %} {% endif %}
@@ -51,10 +104,10 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis qui, aperiam dignissimos necessitatibus distinctio deleniti quaerat commodi facere in perspiciatis ea veniam aliquam recusandae, earum sapiente consectetur doloremque
                         accusamus? Eius!</p>
                     <div class="social">
-                        <a href="#"><span class="fab fa-facebook-f"></span></a>
-                        <a href="#"><span class="fab fa-twitter"></span></a>
-                        <a href="#"><span class="fab fa-instagram"></span></a>
-                        <a href="#"><span class="fab fa-youtube"></span></a>
+                        <a href="{{  empresa.facebook }}" target="_blank"><span class="fab fa-facebook-f"></span></a>
+                        <a href="{{ empresa.twitter }}" target="_blank"><span class="fab fa-twitter"></span></a>
+                        <a href="{{ empresa.instagram }}" target="_blank"><span class="fab fa-instagram"></span></a>
+
                     </div>
                 </div>
             </div>
@@ -64,15 +117,15 @@
                 <div class="contenido">
                     <div class="lugar">
                         <span class="fas fa-map-marker-alt"></span>
-                        <span class="text">Cúcuta, Norte de Santander</span>
+                        <span class="text">{{empresa.direccion}}</span>
                     </div>
                     <div class="telefono">
                         <span class="fas fa-phone-alt"></span>
-                        <span class="text">+57-3508597857</span>
+                        <span class="text">{{empresa.telefono}}</span>
                     </div>
                     <div class="email">
                         <span class="fas fa-envelope"></span>
-                        <span class="text">chapa@gmail.com</span>
+                        <span class="text">{{empresa.email}}</span>
                     </div>
                 </div>
             </div>
@@ -99,13 +152,13 @@
 
         </div>
         <div class="autor">
-            <p>Todos los derechos son reservados por &copy;Jhonatan Beltran</p>
+            <p>Todos los derechos son reservados por &copy;Eduard Cantillo & Jhonatan Beltran</p>
 
         </div>
     </footer>
 
 
-    <script src="../js/empresa.js"></script>
+    <script src="{% static '/js/empresa.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 

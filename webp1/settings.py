@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'productos',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,16 @@ STATIC_URL = '/static/'
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Ckeditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Basic',
+    }
+}
+
+EMAIL_HOST = 'smtp.googlemail.com'
+EMAIL_HOST_USER = 'eduard1998n@gmail.com'
+EMAIL_HOST_PASSWORD = '********'
+EMAIL_PORT = 587
+EMAIL_USE_TLS=True

@@ -24,7 +24,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name='home'),
     path('empresa/',views.imformacion,name='informacion'),
-    path('detalle/',views.detalles),
-    path('productos/',views.productos)
+    path('detalle/<int:idProducto>',views.detalles,name='detalle'),
+    path('productos/',views.productos,name='productos'),
+    path('categoria/<int:idCategoria>',views.filtroCategoria,name='filtroCategoria'),
+    path('marca/<int:idMarca>',views.filtroMarca,name='filtroMarca'),
+    path('contacto/',views.contacto,name='contacto'),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
