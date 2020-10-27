@@ -135,6 +135,6 @@ CKEDITOR_CONFIGS = {
 
 EMAIL_HOST = 'smtp.googlemail.com'
 EMAIL_HOST_USER = 'eduard1998n@gmail.com'
-EMAIL_HOST_PASSWORD = '********'
+EMAIL_HOST_PASSWORD = 'edu@rd12161998'
 EMAIL_PORT = 587
 EMAIL_USE_TLS=True

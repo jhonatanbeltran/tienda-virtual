@@ -13,7 +13,7 @@ class marcaAdmin(admin.ModelAdmin):
 
 class productoAdmin(admin.ModelAdmin):
     search_fields = ['marca__nombre','categoria__nombre']
-    list_display=['referencia','nombre','descripcionCorta','detalle','valor','keywords','categoria','marca']
+    list_display=['referencia','nombre','descripcionCorta','valor','keywords','categoria','marca']
     list_filter=['marca__nombre','categoria__nombre']
    
 class empresaAdmin(admin.ModelAdmin):

@@ -41,10 +41,10 @@ header {
     border-radius: 5px;
     overflow: hidden;
     margin-top: 1em;
-    background-color: #004ba0;
-    -webkit-box-shadow: 7px 6px 10px -6px rgba(243, 232, 232);
-    -moz-box-shadow: 7px 6px 10px -6px rgba(243, 232, 232);
-    box-shadow: 7px 6px 10px -6px rgba(243, 232, 232);
+    background-color: rgb(36, 42, 48);
+    -webkit-box-shadow: 7px 6px 10px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 7px 6px 10px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 7px 6px 10px -6px rgba(0, 0, 0, 0.75);
 }
 
 .novedades h2,
@@ -63,7 +63,7 @@ p {
 }
 
 .novedades img:hover {
-    border: 5px solid #004ba0;
+    border: 5px solid rgb(36, 42, 48);
 }
 
 .row {
@@ -91,7 +91,7 @@ p {
 
 .somos {
     border-radius: 5px;
-    background-color: #004ba0;
+    background-color: rgb(36, 42, 48);
     -webkit-box-shadow: 7px 6px 10px -6px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 7px 6px 10px -6px rgba(0, 0, 0, 0.75);
     box-shadow: 7px 6px 10px -6px rgba(0, 0, 0, 0.75);

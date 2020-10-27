@@ -29,5 +29,4 @@ urlpatterns = [
     path('categoria/<int:idCategoria>',views.filtroCategoria,name='filtroCategoria'),
     path('marca/<int:idMarca>',views.filtroMarca,name='filtroMarca'),
     path('contacto/',views.contacto,name='contacto'),
-
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

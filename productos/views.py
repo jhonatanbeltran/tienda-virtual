@@ -1,24 +1,32 @@
+from django.conf import settings
 from django.shortcuts import render
 from productos.models import producto,empresa,categoria,marca
 from django.utils.html import strip_tags
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import get_template
+from django.db.models import Q
 
 # Create your views here.
+def send_email(email,asunto):
+    contex={'email':email}
+    template=get_template('html/correo.html')
+    content=template.render(contex)
+    mail=EmailMultiAlternatives(
+        'Correo de floop',
+        asunto,
+        settings.EMAIL_HOST_USER,
+        [email],
+        )
+
+    mail.attach_alternative(content,'text/html')
+    mail.send()
 
 def contacto(request):
     if request.method=='POST':
         email=request.POST.get('email','')
         asunto=request.POST.get('asunto','')
         print(email,asunto)
-
-        email=EmailMessage(
-            'Floop: nuevo mensaje ',
-            'De {} \n\nEscribio:\n\n{}'.format(email,asunto),
-            'no-contestar@imbox.mailtrap.io',
-            ['eduard1998n@gmail.com'],reply_to=[email]
-            )
-
-        email.send()
+        send_email(email,asunto)
     return render(request,'index.html')
 
 
@@ -28,11 +36,11 @@ def index(request):
     productos=producto.objects.all()
     productos=list(productos)
     if productos.__len__()>=8:
-        x=productos.__len__()
-        productos=productos[x-9:x-1]
+        productos=productos.__reversed__()
+        x=list(productos)[0:8]
     else:
         productos=productos.__reversed__()
-    return render(request,'index.html',{'produc':productos,'empresa':empre})
+    return render(request,'index.html',{'produc':x,'empresa':empre})
 
 def filtroCategoria(request,idCategoria):
     cate=categoria.objects.all()
