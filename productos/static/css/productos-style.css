@@ -1,0 +1,125 @@
+body {
+    background-color: #dce2ec;
+}
+
+.contenedora {
+    padding: 5em;
+    padding-top: 1em;
+}
+
+.producto {
+    margin: 1em;
+    max-width: 280px;
+    display: flex;
+    flex-flow: column;
+    border-radius: 6px;
+    box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2);
+    background-color: white;
+    cursor: pointer;
+    transition-property: box-shadow;
+    transition-duration: 0.3s;
+}
+
+.producto:hover {
+    box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 248px;
+    height: 248px;
+}
+
+.producto>img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.informacion {
+    border-top: 1px solid rgb(230, 230, 230);
+    padding: 1em;
+    display: flex;
+    flex-flow: column;
+}
+
+.informacion *+* {
+    margin-top: 0.5em;
+}
+
+.tipo-envio {
+    background-color: rgb(52, 131, 250);
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    max-width: max-content;
+    padding: 0 0.2em;
+    border-radius: 3px;
+}
+
+.precio {
+    font-size: 1.5em;
+}
+
+.precio-envio {
+    color: rgb(0, 166, 80);
+}
+
+.descripcion {
+    font-weight: 300;
+}
+
+.precio-envio,
+.descripcion {
+    font-size: 0.9em;
+}
+
+.calificacion {
+    transition-duration: 0.3s;
+    transition-property: opacity;
+    opacity: 0;
+}
+
+.btn {
+    transition-duration: 0.3s;
+    transition-property: opacity;
+    opacity: 0;
+}
+
+.producto:hover .calificacion {
+    opacity: 1;
+}
+
+.producto:hover .btn {
+    opacity: 1;
+}
+
+.btn a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.calificacion>* {
+    margin: 0;
+}
+
+.tipo-envio,
+.calificacion {
+    font-size: 0.8em;
+}
+
+.calificacion>span:first-child {
+    color: rgb(52, 131, 250);
+}
+
+.contenedor-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.t {
+    display: flex;
+}
+
+.titi {
+    padding-left: 10em;
+}

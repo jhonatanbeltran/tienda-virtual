@@ -1,0 +1,117 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/detalle.css' %}">
+
+    <title>Detalle del producto</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="{% url 'home' %}"> <img src="{% static '/assets/logo/flooop.png' %}" alt="Logo" /></a>
+        </div>
+    </header>
+
+    <div class="text-center pt-1">
+        <h2>Detalle del producto</h2>
+    </div>
+
+    <div class="principal ">
+        <div class="detal">
+            <div class="fototo">
+                <img src="{{ pro.img.url }}" alt="{ pro.nombre }">
+            </div>
+            <div class="conten">
+                <span class="nombre">{{ pro.nombre}}</span>
+                <span class="precio">${{pro.valor}}</span>
+                <span class="precio-envio">envío gratis</span>
+                <span class="descrip">{{pro.descripcionCorta}}</span>
+            </div>
+        </div>
+
+        <div class="texto">
+            <p>{{pro.detalle}}</p>
+        </div>
+    </div>
+
+    <footer style="flex-direction: row;">
+        <div class="main-contenido">
+            <div class="caja izquierda">
+                <h2>Nosotros</h2>
+                <div class="contenido">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis qui, aperiam dignissimos necessitatibus distinctio deleniti quaerat commodi facere in perspiciatis ea veniam aliquam recusandae, earum sapiente consectetur doloremque
+                        accusamus? Eius!</p>
+                    <div class="social">
+                        <a href="{{  empresa.facebook }}" target="_blank"><span class="fab fa-facebook-f"></span></a>
+                        <a href="{{ empresa.twitter }}" target="_blank"><span class="fab fa-twitter"></span></a>
+                        <a href="{{ empresa.instagram }}" target="_blank"><span class="fab fa-instagram"></span></a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="caja centro">
+                <h2>Direccion</h2>
+                <div class="contenido">
+                    <div class="lugar">
+                        <span class="fas fa-map-marker-alt"></span>
+                        <span class="text">{{empresa.direccion}}</span>
+                    </div>
+                    <div class="telefono">
+                        <span class="fas fa-phone-alt"></span>
+                        <span class="text">{{empresa.telefono}}</span>
+                    </div>
+                    <div class="email">
+                        <span class="fas fa-envelope"></span>
+                        <span class="text">{{empresa.email}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="caja derecha">
+                <h2>Contactanos</h2>
+                <div class="contenido">
+                    <form action="#">
+                        <div class="email">
+                            <div class="text">Email *</div>
+                            <input type="email" required>
+                        </div>
+                        <div class="msg">
+                            <div class="text">Mensaje *</div>
+                            <textarea cols="28" rows="2" required></textarea>
+                        </div>
+                        <div class="btn btn-primary">
+                            <button type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="autor">
+            <p>Todos los derechos son reservados por &copy;Eduard Cantillo & Jhonatan Beltran</p>
+
+        </div>
+    </footer>
+
+    <script src="../js/empresa.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

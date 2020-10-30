@@ -1,6 +1,0 @@
-.contenedora{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 280px);
-  grid-template-rows: 1fr;
-  grid-gap: 1em;
-}
